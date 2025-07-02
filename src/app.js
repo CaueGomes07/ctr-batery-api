@@ -12,5 +12,11 @@ app.use(express.json());
 const torreRoutes = require('./routes/torre.routes');
 app.use('/torres', torreRoutes);
 
+// Importa e usa as rotas de banco de baterias, prefixadas em /bancos
+const bancoBateriaRoutes = require('./routes/bancobateria.routes');
+app.use('/bancos', bancoBateriaRoutes);
+
+
+
 // Exporta o app para ser usado pelo server.js
 module.exports = app;
