@@ -20,6 +20,10 @@ app.use('/bancos', bancoBateriaRoutes);
 const bateriaRoutes = require('./routes/bateria.routes');
 app.use('/baterias', bateriaRoutes);
 
+// Importa e usa as rotas de manutenção de bateria, prefixadas em /manutencao-baterias
+const manutencaoBateriaRoutes = require('./routes/manutencaobateria.routes');
+app.use('/manutencoes', manutencaoBateriaRoutes);
+
 
 // Exporta o app para ser usado pelo server.js
 module.exports = app;
