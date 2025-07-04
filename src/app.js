@@ -36,6 +36,9 @@ app.use('/marcas', marcaRoutes);
 const enderecoRoutes = require('./routes/endereco.routes');
 app.use('/enderecos', enderecoRoutes);
 
+// Importa e usa as rotas de baterias desativadas, prefixadas em /baterias-desativadas
+const bateriaDesativadaRoutes = require('./routes/bateriadesativada.routes');
+app.use('/baterias-desativadas', bateriaDesativadaRoutes);
 
 
 
