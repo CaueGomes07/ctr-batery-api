@@ -28,6 +28,12 @@ app.use('/manutencoes', manutencaoBateriaRoutes);
 const pedidoBateriaRoutes = require('./routes/pedidobateria.routes');
 app.use('/pedidos', pedidoBateriaRoutes);
 
+// Importa e usa as rotas de marcas, prefixadas em /marcas
+const marcaRoutes = require('./routes/marca.routes');
+app.use('/marcas', marcaRoutes);
+
+
+
 
 
 
