@@ -32,7 +32,9 @@ app.use('/pedidos', pedidoBateriaRoutes);
 const marcaRoutes = require('./routes/marca.routes');
 app.use('/marcas', marcaRoutes);
 
-
+// Importa e usa as rotas de endereços, prefixadas em /enderecos
+const enderecoRoutes = require('./routes/endereco.routes');
+app.use('/enderecos', enderecoRoutes);
 
 
 
