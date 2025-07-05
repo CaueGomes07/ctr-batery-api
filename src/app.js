@@ -11,40 +11,39 @@ app.use(express.json());
 // Rotas das entidades do sistema 
 // Importa e usa as rotas de torre, prefixadas em /torres
 const torreRoutes = require('./routes/torre.routes');
-app.use('/torres', torreRoutes);
+app.use('/api/torres', torreRoutes);
 
 // Importa e usa as rotas de banco de baterias, prefixadas em /bancos
 const bancoBateriaRoutes = require('./routes/bancobateria.routes');
-app.use('/bancos', bancoBateriaRoutes);
+app.use('/api/bancos', bancoBateriaRoutes);
 
 // Importa e usa as rotas de bateria, prefixadas em /baterias
 const bateriaRoutes = require('./routes/bateria.routes');
-app.use('/baterias', bateriaRoutes);
+app.use('/api/baterias', bateriaRoutes);
 
 // Importa e usa as rotas de manutenção de bateria, prefixadas em /manutencao-baterias
 const manutencaoBateriaRoutes = require('./routes/manutencaobateria.routes');
-app.use('/manutencoes', manutencaoBateriaRoutes);
+app.use('/api/manutencoes', manutencaoBateriaRoutes);
 
 // Importa e usa as rotas de pedidos de bateria, prefixadas em /pedidos-bateria
 const pedidoBateriaRoutes = require('./routes/pedidobateria.routes');
-app.use('/pedidos', pedidoBateriaRoutes);
+app.use('/api/pedidos', pedidoBateriaRoutes);
 
 // Importa e usa as rotas de marcas, prefixadas em /marcas
 const marcaRoutes = require('./routes/marca.routes');
-app.use('/marcas', marcaRoutes);
+app.use('/api/marcas', marcaRoutes);
 
 // Importa e usa as rotas de endereços, prefixadas em /enderecos
 const enderecoRoutes = require('./routes/endereco.routes');
-app.use('/enderecos', enderecoRoutes);
+app.use('/api/enderecos', enderecoRoutes);
 
 // Importa e usa as rotas de baterias desativadas, prefixadas em /baterias-desativadas
 const bateriaDesativadaRoutes = require('./routes/bateriadesativada.routes');
-app.use('/baterias-desativadas', bateriaDesativadaRoutes);
+app.use('/api/baterias-desativadas', bateriaDesativadaRoutes);
 
 // Rotas de views
 const viewRoutes = require('./routes/view.routes');
-app.use('/views', viewRoutes);
-
+app.use('/api/views', viewRoutes);
 
 // Exporta o app para ser usado pelo server.js
 module.exports = app;
