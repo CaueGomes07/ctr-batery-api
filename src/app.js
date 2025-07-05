@@ -8,6 +8,7 @@ const app = express();
 // Middleware para entender JSON no corpo das requisições
 app.use(express.json());
 
+// Rotas das entidades do sistema 
 // Importa e usa as rotas de torre, prefixadas em /torres
 const torreRoutes = require('./routes/torre.routes');
 app.use('/torres', torreRoutes);
@@ -40,6 +41,9 @@ app.use('/enderecos', enderecoRoutes);
 const bateriaDesativadaRoutes = require('./routes/bateriadesativada.routes');
 app.use('/baterias-desativadas', bateriaDesativadaRoutes);
 
+// Rotas de views
+const viewRoutes = require('./routes/view.routes');
+app.use('/views', viewRoutes);
 
 
 // Exporta o app para ser usado pelo server.js
