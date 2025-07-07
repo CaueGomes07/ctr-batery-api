@@ -4,7 +4,7 @@ const express = require('express');
 // cria o roteador
 const router = express.Router();
 
-// Importa o controlador de marcas
+// Importa o controlador de endereços
 const enderecoController = require('../controllers/endereco.controller');
 
 // Define as rotas para endereços

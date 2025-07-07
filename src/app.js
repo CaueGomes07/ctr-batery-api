@@ -21,7 +21,11 @@ app.use('/api/bancos', bancoBateriaRoutes);
 const bateriaRoutes = require('./routes/bateria.routes');
 app.use('/api/baterias', bateriaRoutes);
 
-// Importa e usa as rotas de manutenção de bateria, prefixadas em /manutencao-baterias
+// Importa e usa as rotas de baterias desativadas, prefixadas em /baterias-desativadas
+const bateriaDesativadaRoutes = require('./routes/bateriadesativada.routes');
+app.use('/api/baterias-desativadas', bateriaDesativadaRoutes);
+
+// Importa e usa as rotas de manutenção de bateria, prefixadas em /manutencoes
 const manutencaoBateriaRoutes = require('./routes/manutencaobateria.routes');
 app.use('/api/manutencoes', manutencaoBateriaRoutes);
 
@@ -29,17 +33,13 @@ app.use('/api/manutencoes', manutencaoBateriaRoutes);
 const pedidoBateriaRoutes = require('./routes/pedidobateria.routes');
 app.use('/api/pedidos', pedidoBateriaRoutes);
 
-// Importa e usa as rotas de marcas, prefixadas em /marcas
-const marcaRoutes = require('./routes/marca.routes');
-app.use('/api/marcas', marcaRoutes);
-
 // Importa e usa as rotas de endereços, prefixadas em /enderecos
 const enderecoRoutes = require('./routes/endereco.routes');
 app.use('/api/enderecos', enderecoRoutes);
 
-// Importa e usa as rotas de baterias desativadas, prefixadas em /baterias-desativadas
-const bateriaDesativadaRoutes = require('./routes/bateriadesativada.routes');
-app.use('/api/baterias-desativadas', bateriaDesativadaRoutes);
+// Importa e usa as rotas de marcas, prefixadas em /marcas
+const marcaRoutes = require('./routes/marca.routes');
+app.use('/api/marcas', marcaRoutes);
 
 // Rotas de views
 const viewRoutes = require('./routes/view.routes');
