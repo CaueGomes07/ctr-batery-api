@@ -21,5 +21,32 @@ const create = async (req, res) => {
     }
 };
 
+// Atualiza uma torre existente com os dados enviados no corpo da requisição
+const update = async (req, res) => {
+     try {
+    const torre = await Torre.findByPk(req.params.id);
+    if (!torre) return res.status(404).json({ error: 'Torre não encontrada' });
+
+    await torre.update(req.body);
+    return res.json({ message: 'Torre atualizada com sucesso', torre });
+  } catch (err) {
+    return res.status(500).json({ error: 'Erro ao atualizar torre', details: err.message });
+  }
+};
+
+// DELETE /torres/:id
+const del = async (req, res) => {
+  try {
+    const torre = await Torre.findByPk(req.params.id);
+    if (!torre) return res.status(404).json({ error: 'Torre não encontrada' });
+
+    await torre.destroy(); // cascade em bancos, baterias, pedidos
+    return res.json({ message: 'Torre removida com sucesso' });
+  } catch (err) {
+    return res.status(500).json({ error: 'Erro ao remover torre', details: err.message });
+  }
+};
+
+
 // Exporta as funções para uso nas rotas
-module.exports = { getAll, create };
+module.exports = { getAll, create, update, del };
